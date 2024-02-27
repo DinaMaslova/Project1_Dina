@@ -1,6 +1,6 @@
 :root {
-  --background_primary: #fff;
-  --background_second: #33292a;
+  --background_primary: #33292a;
+  --background_second: #3a2e2f;
   --white: #ffffff;
   --font_roboto: "roboto";
 }
@@ -10,8 +10,15 @@
   padding: 0;
 }
 
+h1,
+h2,
+p,
+a,
+li {
+  font-family: var(--font_roboto);
+}
+
 body {
-  background-color: var(--background_primary);
   margin-left: 50%;
   transform: translateX(-50%);
   padding: 0;
@@ -43,7 +50,6 @@ li {
   display: inline;
   font-size: 20px;
   font-weight: 700;
-  font-family: var(--font_roboto);
 }
 
 #hero {
@@ -65,7 +71,6 @@ li {
 
 h1 {
   color: #fff;
-  font-family: var(--font_roboto);
   font-size: 8em;
   text-align: right;
   line-height: 1em;
@@ -90,17 +95,15 @@ h1 {
   padding: 0px 40px;
 }
 
-h2 {
-  font-family: var(--font_roboto);
+.text_info h2 {
   font-size: 2em;
   color: #000;
   margin-top: 50px;
 }
 
-p {
+.text_info p {
   font-size: 18px;
   color: #000;
-  font-family: var(--font_roboto);
   text-align: initial;
 }
 
@@ -113,7 +116,57 @@ p {
   justify-content: center;
   padding: 0px 40px;
 }
-img {
+
+.img_info img {
   width: 500px;
   height: 400px;
+}
+
+#wedo {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--background_primary);
+}
+
+.text_wedo {
+  width: 60%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+}
+
+.wedo_icons {
+  width: 60%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.icons img {
+  width: 90px;
+  height: 90px;
+}
+
+.icons p {
+  font-size: 20px;
+  font-weight: 700;
 }
