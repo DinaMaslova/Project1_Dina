@@ -2,7 +2,10 @@
   --background_primary: #33292a;
   --background_second: #3a2e2f;
   --background_third: #644b4f;
+  --background_footer: #333333;
+  --footer_text: #efa69d;
   --white: #ffffff;
+  --black: #000;
   --font_roboto: "roboto";
 }
 
@@ -14,10 +17,23 @@
 
 h1,
 h2,
+h3,
 p,
 a,
 li {
   font-family: var(--font_roboto);
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: var(--font_roboto);
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+  font-family: var(--font_roboto);
+  line-height: 18px;
 }
 
 body {
@@ -44,7 +60,7 @@ header {
   margin: 0 auto;
   height: 80px;
   top: 0;
-  color: #fff;
+  color: var(--white);
 }
 
 .navigation_wrapper {
@@ -57,7 +73,6 @@ header {
 
 .navigation_item {
   font-size: 20px;
-  font-weight: 700;
   padding: 1rem;
   list-style-type: none;
 }
@@ -81,7 +96,7 @@ header {
 h1 {
   position: absolute;
   bottom: 150px;
-  color: #fff;
+  color: var(--white);
   font-size: 7em;
   right: 0;
   text-align: right;
@@ -89,48 +104,46 @@ h1 {
 
 #info {
   max-width: 70%;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 6% auto;
+  color: var(--black);
 }
 
 .text_info {
-  width: 500px;
-  height: 400px;
+  width: 35%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0px 40px;
+  text-align: initial;
+  line-height: 1.1rem;
 }
 
 .text_info h2 {
-  font-size: 2.2em;
-  color: #000;
-  margin-top: 50px;
+  padding-bottom: 30px;
 }
 
 .text_info p {
-  font-size: 18px;
-  color: #000;
   text-align: initial;
 }
 
 .img_info {
-  width: 600px;
-  height: 500px;
+  width: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 40px;
 }
 
 .img_info img {
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
 }
 
 #wedo {
@@ -150,12 +163,8 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
+  color: var(--white);
   text-align: center;
-}
-
-.text_wedo h2 {
-  font-size: 2.2em;
 }
 
 .wedo_icons {
@@ -173,7 +182,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
+  color: var(--white);
 }
 
 .icons img {
@@ -181,86 +190,207 @@ h1 {
   height: 90px;
 }
 
-.icons p {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-#gallery {
-  max-width: 70%;
+#collage {
+  width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 100px auto;
+  padding: 5% 0%;
 }
 
-.photo {
-  display: flex;
-  flex-direction: row;
-  width: 65%;
-  height: 300px;
+.grid-container {
+  width: 70%;
+  height: auto;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
 
-.photo2 {
-  width: 350px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 10px;
 }
 
-img {
-  width: 350px;
-  height: 300px;
+.grid-item img {
+  width: 300px;
+  height: 250px;
+  border-radius: 8px;
 }
 
 span {
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 250px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 8px;
   background-color: #f2f2f2;
 }
 
 #contact {
   width: 100%;
-  height: 600px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--background_third);
+  color: var(--white);
 }
 
 .contact_main {
-  width: 80%;
+  width: 60%;
+  height: 220px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contact_text {
+  width: 20%;
+  height: 200px;
+  text-align: left;
+  display: flex;
+  align-items: self-start;
+  justify-content: center;
+}
+
+.contact_text2 {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contact_text2 p {
+  padding-bottom: 40px;
+}
+
+.cta_contact {
+  background-color: var(--white);
+  border: 1px solid white;
+  border-radius: 6px;
+  color: #000;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font_roboto);
+  font-weight: 700;
+}
+
+#reviews {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+.container {
+  width: 20%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container2 {
+  width: 60%;
   height: 400px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  color: #fff;
 }
 
-.contact_text {
-  width: 200px;
-  height: 300px;
-  color: #fff;
-  text-align: left;
-}
-
-.contact_text h2 {
-  font-weight: 700;
-  font-size: 32px;
-}
-
-.contact_text2 {
-  width: 500px;
+.container_items {
+  width: 30%;
   height: 400px;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.container_img {
+  width: 120px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#gallery {
+  width: 100%;
+  height: auto;
+}
+
+.gallery_grid {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery_grid_item {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery_grid_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  background-color: var(--background_footer);
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer_text {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0px;
+}
+
+footer p {
+  color: var(--footer_text);
+  text-decoration: underline;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 10px;
 }
