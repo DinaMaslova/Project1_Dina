@@ -31,9 +31,20 @@ h2 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1em;
   font-family: var(--font_roboto);
   line-height: 18px;
+}
+
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.4rem;
+  }
 }
 
 body {
@@ -60,6 +71,7 @@ header {
   margin: 0 auto;
   height: 80px;
   top: 0;
+  position: relative;
   color: var(--white);
 }
 
@@ -75,50 +87,157 @@ header {
   font-size: 20px;
   padding: 1rem;
   list-style-type: none;
+  display: inline-block;
 }
+
+@media (max-width: 1000px) {
+  .navigation {
+    display: none;
+  }
+
+  .navigation_wrapper {
+    width: 90%;
+  }
+
+  .navigation_item {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation_wrapper {
+    display: none;
+  }
+
+  .navigation_item {
+    padding: 10px;
+  }
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #adacab;
+}
+
+/*------------------burger-menu------------------*/
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  display: none;
+  padding: 1.5% 5%;
+}
+
+.dropdown_btn {
+  background-color: #ffffff00;
+  border: none;
+}
+
+.dropdown_btn img {
+  width: 60px;
+  height: 50px;
+}
+
+/* Всплывающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 80px;
+  background-color: #726e6e60;
+  min-width: 200px;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  right: 0;
+  border-radius: 8px;
+}
+
+.dropdown-content .navigation_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  color: var(--white);
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+  background-color: #c9c6c63a;
+}
+
+/* Показывать всплывающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении всплывающего содержимого */
+.dropdown:hover .dropbtn {
+  background-color: #353333;
+}
+
+@media (max-width: 1000px) {
+  .dropdown {
+    display: inline-block;
+  }
+}
+
+/*---------------------hero-----------------*/
 
 #hero {
   width: 100%;
   height: 100vh;
   background-image: url(img/images/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg);
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-top: 80px;
 }
 
 .heading {
-  height: 100%;
   width: 70%;
+  height: 100%;
+  padding: 20% 0% 10% 0%;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 h1 {
-  position: absolute;
-  bottom: 150px;
   color: var(--white);
-  font-size: 7em;
+  font-size: 6em;
   right: 0;
   text-align: right;
 }
+
+/* -------------About Us------------*/
 
 #info {
   max-width: 70%;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: stretch;
   margin: 6% auto;
   color: var(--black);
 }
 
 .text_info {
-  width: 35%;
+  max-width: 35%;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: initial;
   line-height: 1.1rem;
 }
@@ -132,39 +251,63 @@ h1 {
 }
 
 .img_info {
-  width: 50%;
-  height: auto;
-  display: flex;
+  max-width: 35%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
 }
 
 .img_info img {
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 8px;
 }
 
+@media (max-width: 1200px) {
+  #info {
+    max-width: 100%;
+    height: 650px;
+  }
+
+  .text_info p {
+    line-height: 1.2em;
+  }
+
+  .text_info h2 {
+    padding-bottom: 0px;
+  }
+}
+
+/* -------------what we do------------*/
+
 #wedo {
   width: 100%;
-  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--background_primary);
+  padding: 6% 0;
 }
 
 .text_wedo {
-  width: 50%;
-  height: 150px;
+  max-width: 50%;
+  margin-bottom: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   color: var(--white);
   text-align: center;
+}
+
+.text_wedo h2 {
+  margin-bottom: 30px;
+}
+
+.icons_text {
+  font-size: 1.4em;
+  font-weight: 700;
 }
 
 .wedo_icons {
@@ -174,7 +317,6 @@ h1 {
   flex-direction: row;
   align-items: space-between;
   justify-content: space-between;
-  margin-top: 30px;
 }
 
 .icons {
@@ -189,6 +331,20 @@ h1 {
   width: 90px;
   height: 90px;
 }
+
+@media (max-width: 1200px) {
+  .text_wedo,
+  .wedo_icons {
+    max-width: 70%;
+    justify-content: space-between;
+  }
+
+  .wedo_icons {
+    width: 80%;
+  }
+}
+
+/* -------------collage/grid ------------*/
 
 #collage {
   width: 100%;
@@ -232,9 +388,22 @@ span {
   background-color: #f2f2f2;
 }
 
+@media (max-width: 1000px) {
+  .grid-container {
+    width: 100%;
+  }
+
+  .grid-item img,
+  span {
+    width: 200px;
+    object-fit: cover;
+  }
+}
+
+/* -------------where do u want to go------------*/
+
 #contact {
   width: 100%;
-  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -245,7 +414,7 @@ span {
 
 .contact_main {
   width: 60%;
-  height: 220px;
+  padding: 8% 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -287,14 +456,21 @@ span {
   font-weight: 700;
 }
 
+@media (max-width: 1200px) {
+  .contact_main {
+    width: 100%;
+  }
+}
+
+/* ----------------Reviews---------------*/
+
 #reviews {
   width: 100%;
-  height: 800px;
+  padding: 8% 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 50px;
 }
 
 .container {
@@ -305,6 +481,7 @@ span {
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  margin-bottom: 4%;
 }
 
 .container2 {
@@ -328,9 +505,25 @@ span {
 
 .container_img {
   width: 120px;
-  height: 110px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 70%;
+    justify-content: space-evenly;
+  }
+
+  .container2 {
+    width: 100%;
+  }
+
+  .container p,
+  .container2 p {
+    font-size: 1em;
+  }
 }
 
 #gallery {
